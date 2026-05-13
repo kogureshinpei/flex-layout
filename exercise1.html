@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>実践① — 親要素プロパティを書いてみよう</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+  <div class="max-w-4xl mx-auto px-6 py-8">
+    <h1 class="text-2xl font-bold text-gray-800 mb-8">実践① — 親要素プロパティを書いてみよう</h1>
+
+    <!-- ===== 課題 01：カードを横並びにする ===== -->
+    <section class="mb-10">
+      <h2 class="text-lg font-bold text-gray-700 mb-2">課題 01｜カードを横並びにする</h2>
+      <p class="text-sm text-gray-500 mb-3">3枚のカードが縦に積まれています。横に並べてみよう。</p>
+
+      <div class="bg-white p-4 rounded-xl border-2 border-dashed border-gray-300">
+        <!-- TODO: この div の class="" に flex を追加しよう -->
+        <!-- ヒント：flex -->
+        <div class="">
+          <div class="bg-teal-100 text-teal-800 font-bold p-4 rounded-lg">カード 1</div>
+          <div class="bg-teal-100 text-teal-800 font-bold p-4 rounded-lg">カード 2</div>
+          <div class="bg-teal-100 text-teal-800 font-bold p-4 rounded-lg">カード 3</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 課題 02：カードの間に均等な余白をつける ===== -->
+    <section class="mb-10">
+      <h2 class="text-lg font-bold text-gray-700 mb-2">課題 02｜カードの間に均等な余白をつける</h2>
+      <p class="text-sm text-gray-500 mb-3">課題 01 で横並びにしたカード。今度はカードとカードの間に余白を作ってみよう。</p>
+
+      <div class="bg-white p-4 rounded-xl border-2 border-dashed border-gray-300">
+        <!-- TODO: この div の class に gap-4 を追加しよう -->
+        <!-- ヒント：gap-4 -->
+        <div class="flex">
+          <div class="bg-blue-100 text-blue-800 font-bold p-4 rounded-lg">カード 1</div>
+          <div class="bg-blue-100 text-blue-800 font-bold p-4 rounded-lg">カード 2</div>
+          <div class="bg-blue-100 text-blue-800 font-bold p-4 rounded-lg">カード 3</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 課題 03：カードをページの横中央に置く ===== -->
+    <section class="mb-10">
+      <h2 class="text-lg font-bold text-gray-700 mb-2">課題 03｜カードをページの横中央に置く</h2>
+      <p class="text-sm text-gray-500 mb-3">カードのまとまりをページの横中央に配置してみよう。</p>
+
+      <div class="bg-white p-4 rounded-xl border-2 border-dashed border-gray-300">
+        <!-- TODO: この div の class に justify-center を追加しよう -->
+        <!-- ヒント：justify-center -->
+        <div class="flex gap-4">
+          <div class="bg-purple-100 text-purple-800 font-bold p-4 rounded-lg">カード 1</div>
+          <div class="bg-purple-100 text-purple-800 font-bold p-4 rounded-lg">カード 2</div>
+          <div class="bg-purple-100 text-purple-800 font-bold p-4 rounded-lg">カード 3</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 課題 04：ナビバーのロゴを左・メニューを右に置く ===== -->
+    <section class="mb-10">
+      <h2 class="text-lg font-bold text-gray-700 mb-2">課題 04｜ナビバーのロゴを左・メニューを右に置く</h2>
+      <p class="text-sm text-gray-500 mb-3">ナビゲーションバーを作ろう。ロゴを左端、メニューリンクを右端に配置してみよう。</p>
+
+      <div class="rounded-xl border-2 border-dashed border-gray-300 overflow-hidden">
+        <div class="bg-gray-800 px-6 py-4">
+          <!-- TODO: この div の class="" に flex justify-between items-center を追加しよう -->
+          <!-- ヒント：justify-between items-center -->
+          <div class="">
+            <span class="text-white font-bold text-lg">POSSE</span>
+            <div class="flex gap-6">
+              <a href="#" class="text-gray-300 hover:text-white">Home</a>
+              <a href="#" class="text-gray-300 hover:text-white">About</a>
+              <a href="#" class="text-gray-300 hover:text-white">Contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 課題 05：縦方向にも中央揃えにする ===== -->
+    <section class="mb-10">
+      <h2 class="text-lg font-bold text-gray-700 mb-2">課題 05｜縦方向にも中央揃えにする</h2>
+      <p class="text-sm text-gray-500 mb-3">バナーの中のテキストを縦方向の中央に配置してみよう。親要素に高さ（h-40）がすでにある。</p>
+
+      <div class="bg-white p-4 rounded-xl border-2 border-dashed border-gray-300">
+        <!-- TODO: この div の class に flex items-center を追加しよう -->
+        <!-- ヒント：flex items-center（h-40 はすでにある） -->
+        <div class="h-40 bg-gradient-to-r from-teal-500 to-blue-600 rounded-xl px-8">
+          <div>
+            <p class="text-white text-xl font-bold">今週のおすすめ</p>
+            <p class="text-teal-100 text-sm mt-1">季節のスペシャルドリンク</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 課題 06：カードが多いとき折り返すようにする ===== -->
+    <section class="mb-10">
+      <h2 class="text-lg font-bold text-gray-700 mb-2">課題 06｜カードが多いとき折り返すようにする</h2>
+      <p class="text-sm text-gray-500 mb-3">カードが 8 枚あります。画面幅を超えたとき自動で折り返すようにしてみよう。</p>
+
+      <div class="bg-white p-4 rounded-xl border-2 border-dashed border-gray-300">
+        <!-- TODO: この div の class に flex-wrap を追加しよう -->
+        <!-- ヒント：flex-wrap -->
+        <div class="flex gap-3">
+          <div class="bg-orange-100 text-orange-800 font-bold p-4 rounded-lg">カード 1</div>
+          <div class="bg-orange-100 text-orange-800 font-bold p-4 rounded-lg">カード 2</div>
+          <div class="bg-orange-100 text-orange-800 font-bold p-4 rounded-lg">カード 3</div>
+          <div class="bg-orange-100 text-orange-800 font-bold p-4 rounded-lg">カード 4</div>
+          <div class="bg-orange-100 text-orange-800 font-bold p-4 rounded-lg">カード 5</div>
+          <div class="bg-orange-100 text-orange-800 font-bold p-4 rounded-lg">カード 6</div>
+          <div class="bg-orange-100 text-orange-800 font-bold p-4 rounded-lg">カード 7</div>
+          <div class="bg-orange-100 text-orange-800 font-bold p-4 rounded-lg">カード 8</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>

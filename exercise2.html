@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>実践② — 子要素プロパティを自由に試してみよう</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+  <div class="max-w-4xl mx-auto px-6 py-8">
+    <h1 class="text-2xl font-bold text-gray-800 mb-2">実践② — 子要素プロパティを自由に試してみよう</h1>
+    <p class="text-sm text-gray-500 mb-8">コメントのヒントを読みながら、クラスを追加して変化を確認しよう。答えはない。実験しよう！</p>
+
+    <!-- ===== 実験 A：grow ===== -->
+    <section class="mb-10">
+      <h2 class="text-lg font-bold text-gray-700 mb-2">実験 A｜grow — 余ったスペースを埋めて広がる</h2>
+      <p class="text-sm text-gray-500 mb-3">grow を付けたアイテムだけ、余ったスペースを使って広がる。grow-0 で無効化できる。</p>
+
+      <div class="bg-white p-4 rounded-xl border border-gray-200">
+        <!-- grow を試したいアイテムの class に grow を追加してみよう -->
+        <!-- grow-0 にすると広がらなくなる -->
+        <div class="flex gap-3">
+          <div class="bg-teal-500 text-white font-bold p-3 rounded-lg">アイテム 1</div>
+          <div class="bg-teal-400 text-white font-bold p-3 rounded-lg">アイテム 2</div>
+          <div class="bg-teal-300 text-white font-bold p-3 rounded-lg">アイテム 3</div>
+        </div>
+        <!-- 試してみよう：
+          - アイテム 1 に grow を追加するとどうなる？
+          - アイテム 2 にも grow を追加したら？
+          - grow を付けたまま grow-0 に変えたら？
+        -->
+      </div>
+    </section>
+
+    <!-- ===== 実験 B：shrink-0 ===== -->
+    <section class="mb-10">
+      <h2 class="text-lg font-bold text-gray-700 mb-2">実験 B｜shrink-0 — スペースが足りなくても縮まなくなる</h2>
+      <p class="text-sm text-gray-500 mb-3">親要素を狭くしたとき、shrink-0 を付けたアイテムだけ縮まずに元のサイズを保つ。</p>
+
+      <div class="bg-white p-4 rounded-xl border border-gray-200">
+        <div class="flex gap-3 w-72">
+          <!-- shrink-0 を試したいアイテムに追加してみよう -->
+          <!-- w-72 で親を狭くしているので、デフォルトでは縮む -->
+          <div class="bg-blue-500 text-white font-bold p-3 rounded-lg w-32">ロゴ</div>
+          <div class="bg-blue-300 text-white font-bold p-3 rounded-lg">メニュー 1</div>
+          <div class="bg-blue-200 text-blue-800 font-bold p-3 rounded-lg">メニュー 2</div>
+        </div>
+        <!-- 試してみよう：
+          - ロゴ に shrink-0 を追加するとどうなる？
+          - w-72 を w-48 に変えて、さらに狭くすると？
+        -->
+      </div>
+    </section>
+
+    <!-- ===== 実験 C：order-* ===== -->
+    <section class="mb-10">
+      <h2 class="text-lg font-bold text-gray-700 mb-2">実験 C｜order-* — HTML の順番と違う順で表示する</h2>
+      <p class="text-sm text-gray-500 mb-3">order-1〜12 を使うと、HTML の記述順に関係なく表示順を変えられる。</p>
+
+      <div class="bg-white p-4 rounded-xl border border-gray-200">
+        <div class="flex gap-3">
+          <!-- order-* を各アイテムに追加して順番を変えてみよう -->
+          <div class="bg-purple-500 text-white font-bold p-3 rounded-lg">HTML 順：1番目</div>
+          <div class="bg-purple-400 text-white font-bold p-3 rounded-lg">HTML 順：2番目</div>
+          <div class="bg-purple-300 text-white font-bold p-3 rounded-lg">HTML 順：3番目</div>
+          <div class="bg-purple-200 text-purple-800 font-bold p-3 rounded-lg">HTML 順：4番目</div>
+        </div>
+        <!-- 試してみよう：
+          - 4番目のアイテムに order-first を付けると先頭に来る？
+          - 1番目に order-last を付けると最後に行く？
+          - order-1 / order-2 / order-3 で好きな順番にしてみよう
+        -->
+      </div>
+    </section>
+
+    <!-- ===== 実験 D：self-* ===== -->
+    <section class="mb-10">
+      <h2 class="text-lg font-bold text-gray-700 mb-2">実験 D｜self-* — そのアイテムだけ縦揃えを個別に指定する</h2>
+      <p class="text-sm text-gray-500 mb-3">親に items-start を設定しているとき、特定のアイテムだけ self-center や self-end で縦揃えを上書きできる。</p>
+
+      <div class="bg-white p-4 rounded-xl border border-gray-200">
+        <div class="flex gap-3 items-start h-32">
+          <!-- self-* を各アイテムに追加して縦揃えを変えてみよう -->
+          <!-- 親は items-start（上揃え）になっている -->
+          <div class="bg-orange-500 text-white font-bold p-3 rounded-lg">アイテム A</div>
+          <div class="bg-orange-400 text-white font-bold p-3 rounded-lg">アイテム B</div>
+          <div class="bg-orange-300 text-white font-bold p-3 rounded-lg">アイテム C</div>
+        </div>
+        <!-- 試してみよう：
+          - アイテム B に self-center を追加するとどこに移動する？
+          - アイテム C に self-end を追加すると？
+          - 3つともバラバラの位置にできる？
+          （self-start / self-center / self-end / self-stretch が使える）
+        -->
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
